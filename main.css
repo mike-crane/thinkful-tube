@@ -9,3 +9,8 @@ button {
     background-color: purple;
     color: white;
 }
+
+img {
+  width: 20%;
+  padding: 5px;
+}

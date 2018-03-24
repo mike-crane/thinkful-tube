@@ -8,24 +8,44 @@ function getApiData(searchTerm, callback) {
   const query = {
     part: 'snippet',
     key: API_KEY,
-    q: searchTerm,
-    type: 'video'
+    q: searchTerm
   }
   $.getJSON(youtubeEndpoint, query, callback);
 }
 
 function renderResult(data) {
-  // appends some API data to the html results section.
+  let imgResult = '';
+  let imgThumbnail = function (key) {
+
+    let vidUrl = key.snippet.thumbnails.medium.url;
+    let vidId = vidUrl.split('').slice(23, 34).join('');
+    let thumbnailAddress = 'https://www.youtube.com/watch?v=' + vidId;
+
+    imgResult += `<a href="${thumbnailAddress}"><img src="${vidUrl}"></a>`;
+  }
+
   console.log(data);
+
+  if (data.items) {
+    data.items.forEach(imgThumbnail);
+  } else {
+    imgResult += '<h2>Sorry, nothing found...</h2>';
+  }
+  $('.js-search-results').html(imgResult);
 }
+
+
 
 function handleSubmitButton() {
   $('form').submit(function(e) {
     e.preventDefault();
 
-    let vidSearch = $(this).find('#youtube-search').val();
+    let vidSearch = $('#youtube-search');
+    let vidSearchQuery = vidSearch.val();
 
-    getApiData(vidSearch, renderResult);
+    vidSearch.val('');
+
+    getApiData(vidSearchQuery, renderResult);
   })
 }
 
