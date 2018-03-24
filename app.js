@@ -1,15 +1,33 @@
 'use strict';
 
-function getApiData() {
-  // pass url endpoint, query object, and callback function
+const youtubeEndpoint = 'https://www.googleapis.com/youtube/v3/search';
+
+const API_KEY = 'AIzaSyB_DDm9OfaoRV4noF7D93sYYwO-i7AN15A';
+
+function getApiData(searchTerm, callback) {
+  const query = {
+    part: 'snippet',
+    key: API_KEY,
+    q: searchTerm,
+    type: 'video'
+  }
+  $.getJSON(youtubeEndpoint, query, callback);
 }
 
-function renderResult() {
+function renderResult(data) {
   // appends some API data to the html results section.
+  console.log(data);
 }
 
 function handleSubmitButton() {
-  // on submit, send search query to function responsible for API call
+  $('form').submit(function(e) {
+    e.preventDefault();
+
+    let vidSearch = $(this).find('#youtube-search').val();
+
+    getApiData(vidSearch, renderResult);
+  })
 }
 
 $(handleSubmitButton);
+
