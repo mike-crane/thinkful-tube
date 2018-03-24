@@ -17,14 +17,13 @@ function renderResult(data) {
   let imgResult = '';
   let imgThumbnail = function (key) {
 
-    let vidUrl = key.snippet.thumbnails.medium.url;
-    let vidId = vidUrl.split('').slice(23, 34).join('');
-    let thumbnailAddress = 'https://www.youtube.com/watch?v=' + vidId;
+    let imgUrl = key.snippet.thumbnails.medium.url;
+    let vidUrl = 'https://www.youtube.com/watch?v=' + key.id.videoId;
 
-    imgResult += `<a href="${thumbnailAddress}"><img src="${vidUrl}"></a>`;
+    imgResult += `<a href="${vidUrl}"><img src="${imgUrl}"></a>`;
   }
 
-  console.log(data);
+  // console.log(data);
 
   if (data.items) {
     data.items.forEach(imgThumbnail);
