@@ -5,12 +5,68 @@ html {
   box-sizing: inherit;
 }
 
-button {
-    background-color: purple;
-    color: white;
+body {
+  background-color: #5fcf81;
 }
 
 img {
-  width: 20%;
+  width: 80%;
   padding: 5px;
+  margin: 0 10%;
+}
+
+img:hover {
+  opacity: 0.8;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  font-size: 1.75em;
+  margin: 0 auto;
+}
+
+label {
+  padding-top: 20px;
+  font-family: 'Fascinate Inline', sans-serif;
+  color: rgb(121, 61, 182);
+  font-size: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+label, input, button {
+  display: block;
+}
+
+button {
+  background-color: rebeccapurple;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 20px auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(121, 61, 182);
+}
+
+.js-search-results {
+    background-color: #499e63;
+}
+
+@media only screen and (min-width: 650px) {
+    img {
+      width: 20%;
+      height: 177px;
+      padding: 20px 5px;
+      margin: 0;
+    }
 }

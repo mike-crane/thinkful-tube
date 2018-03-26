@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Thinkful Tube</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 
 <body>
-    <form action='#' method='post'>
-        <label for="youtube-search">Video Search</label>
-        <input id="youtube-search" name="search" type="text">
-        <button type="submit">Submit</button>
-    </form>
+    <header role="banner">
+        <form action='#' method='post'>
+            <label for="youtube-search">Video Search</label>
+            <input id="youtube-search" name="search" type="text">
+            <button type="submit">Submit</button>
+        </form>
+    </header>
 
-    <div class="js-search-results"></div>
+    <main role="main">
+        <div class="js-search-results"></div>
+    </main>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="app.js"></script>
 </body>

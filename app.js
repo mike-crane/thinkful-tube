@@ -20,10 +20,9 @@ function renderResult(data) {
     let imgUrl = key.snippet.thumbnails.medium.url;
     let vidUrl = 'https://www.youtube.com/watch?v=' + key.id.videoId;
 
-    imgResult += `<a href="${vidUrl}"><img src="${imgUrl}"></a>`;
+    imgResult += `<a href="${vidUrl}" class="video"><img src="${imgUrl}"></a>`;
   }
-
-  // console.log(data);
+  console.log(data);
 
   if (data.items) {
     data.items.forEach(imgThumbnail);
@@ -32,8 +31,6 @@ function renderResult(data) {
   }
   $('.js-search-results').html(imgResult);
 }
-
-
 
 function handleSubmitButton() {
   $('form').submit(function(e) {
