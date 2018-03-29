@@ -19,9 +19,11 @@ function renderResult(data) {
 
     let imgUrl = key.snippet.thumbnails.medium.url;
     let vidUrl = 'https://www.youtube.com/watch?v=' + key.id.videoId;
+    let vidTitle = key.snippet.title;
 
-    imgResult += `<a href="${vidUrl}" class="video"><img src="${imgUrl}"></a>`;
+    imgResult += `<a href="${vidUrl}" class="video"><img src="${imgUrl}" aria-label="${vidTitle}"></a>`;
   }
+
   console.log(data);
 
   if (data.items) {
@@ -29,7 +31,7 @@ function renderResult(data) {
   } else {
     imgResult += '<h2>Sorry, nothing found...</h2>';
   }
-  $('.js-search-results').html(imgResult);
+  $('.js-search-results').prop('hidden', false).html(imgResult);
 }
 
 function handleSubmitButton() {

@@ -19,25 +19,33 @@ img:hover {
   opacity: 0.8;
 }
 
-form {
+h1, form {
   text-align: center;
 }
 
 input {
-  font-size: 1.75em;
+  font-size: 1.5em;
   margin: 0 auto;
 }
 
-label {
-  padding-top: 20px;
-  font-family: 'Fascinate Inline', sans-serif;
+h1, label {
+  font-family: sans-serif;
   color: rgb(121, 61, 182);
-  font-size: 3em;
-  font-weight: bold;
   text-transform: uppercase;
+  font-size: 1.75em;
+  font-weight: bold;
 }
 
-label, input, button {
+h1 {
+  font-family: 'Fascinate Inline', sans-serif;
+  color: #000;
+  font-size: 3em;
+  
+  /* padding-top: 20px; */
+}
+
+
+h1, label, input, button {
   display: block;
 }
 
